@@ -52,6 +52,7 @@
 #include "pluginManager.h"
 #include "pluginHost.h"
 #include "recorder.h"
+#include "recManager.h"
 #include "midiMapConf.h"
 #include "kernelMidi.h"
 #include "kernelAudio.h"
@@ -113,6 +114,7 @@ void initAudio_()
 	clock::init(conf::samplerate, conf::midiTCfps);
 	mixer::init(clock::getFramesInLoop(), kernelAudio::getRealBufSize());
 	recorder::init(&mixer::mutex);
+	recManager::init(&mixer::mutex);
 
 #ifdef WITH_VST
 
