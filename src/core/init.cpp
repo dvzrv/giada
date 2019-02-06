@@ -220,7 +220,7 @@ void startup(int argc, char** argv)
 {
 	time_t t;
 	time (&t);
-	gu_log("[init] Giada " G_VERSION_STR " - %s", ctime(&t));
+	gu_log("[init] Giada %s - %s", G_VERSION_STR, ctime(&t));
 
 	initConf_();
 	initAudio_();
@@ -245,7 +245,7 @@ void shutdown()
 
 	shutdownAudio_();
 
-	gu_log("[init] Giada " G_VERSION_STR " closed\n\n");
+	gu_log("[init] Giada %s closed\n\n", G_VERSION_STR);
 	gu_logClose();
 }
 }}} // giada::m::init
